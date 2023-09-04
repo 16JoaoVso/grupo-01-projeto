@@ -1,88 +1,88 @@
 !Acessando o modo exec Privilegiado
-enable
+enable ✓
 
 	!Acessando o modo de Configuração Global de Comandos
-	configure terminal
+	configure terminal ✓
 
 		!Criando as VLANs Standard (Padrão) no Switch Layer 3 3560
 		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a 
 		!partir da linha: 73 (Determinação das Sub-Redes e VLAN de cada Grupo)
 
 		!Criação da VLAN padrão
-		vlan 10
+		vlan 10 ✓
 			!Nome da VLAN padrão
-			name svig01
-		vlan 11
-			name ??nomealuno?? 
-		vlan 12
-			name ??nomealuno?? 
-		vlan 13
-			name ??nomealuno??
-		vlan 14
-			name ??nomealuno??
-		vlan 15
-			name wifi
-			exit
+			name svig01 ✓
+		vlan 11 ✓
+			name ??nomealuno?? ✓ 
+		vlan 12 ✓
+			name ??nomealuno?? ✓
+		vlan 13 ✓
+			name ??nomealuno?? ✓
+		vlan 14 ✓
+			name ??nomealuno?? ✓
+		vlan 15 ✓
+			name wifi ✓
+			exit ✓
 
 		!OBSERVAÇÃO IMPORTANTE: a Interface fastEthernet 0/1 não será usada.
 		
 		!Configurando a Interface de Acesso a VLAN do Primeiro Usuário
-		interface fastEthernet 0/2
+		interface fastEthernet 0/2 ✓
 			
 			!Configurando a Interface de Acesso a VLAN
-			description Interface de Acesso da VLAN 11 do Primeiro Usuário
+			description Interface de Acesso da VLAN 11 do Primeiro Usuário ✓
 			
 			!Configurando o Modo de Acesso da Interface
-			switchport mode access
+			switchport mode access ✓
 			
 			!Configurando o Acesso a VLAN
-			switchport access vlan 11
+			switchport access vlan 11 ✓
 			
 			!Saindo da configuração da Interface
-			exit
+			exit ✓
 		
 		!Configurando a Interface de Acesso a VLAN do Segundo Usuário
-		interface fastEthernet 0/3
-			description Interface de Acesso da VLAN 12 do Segundo Usuário
-			switchport mode access
-			switchport access vlan 12
-			exit
+		interface fastEthernet 0/3 ✓
+			description Interface de Acesso da VLAN 12 do Segundo Usuário ✓
+			switchport mode access ✓
+			switchport access vlan 12 ✓
+			exit ✓
 
-		!Configurando a Interface de Acesso a VLAN do Terceiro Usuário
-		interface fastEthernet 0/4
-			description Interface de Acesso da VLAN 13 do Terceiro Usuário
-			switchport mode access
-			switchport access vlan 13
-			exit
+		0!Configurando a Interface de Acesso a VLAN do Terceiro Usuário
+		interface fastEthernet 0/4 ✓
+			description Interface de Acesso da VLAN 13 do Terceiro Usuário ✓
+			switchport mode access ✓
+			switchport access vlan 13 ✓
+			exit ✓
 
 		!Configurando a Interface de Acesso a VLAN do Quarto Usuário
-		interface fastEthernet 0/5
+		interface fastEthernet 0/5 ✓
 			description Interface de Acesso da VLAN 14 do Quarto Usuário
-			switchport mode access
-			switchport access vlan 14
-			exit
+			switchport mode access ✓
+			switchport access vlan 14 ✓
+			exit ✓
 
 		!Configurando a Interface de Acesso a VLAN da Rede Sem-Fio (Wi-Fi/Wireless)
-		interface fastEthernet 0/6
+		interface fastEthernet 0/6 ✓
 			description Interface de Acesso da VLAN 15 Wireless
-			switchport mode access
-			switchport access vlan 15
-			exit
+			switchport mode access ✓
+			switchport access vlan 15 ✓
+			exit ✓
 		
 		!Desativando as Interfaces que não serão utilizadas no Switch Layer 3 3560
-		interface range fastEthernet 0/7 - 23
-			shutdown
-			exit
+		interface range fastEthernet 0/7 - 23 ✓
+			shutdown ✓
+			exit ✓
 
 		!Configurando a Interface de Trunk com o Router 2911
-		interface fastEthernet 0/24
-			description Interface de Trunk com o Router 2911 do Grupo-0?
-			switchport trunk encapsulation dot1q
-			switchport mode trunk
-		end
+		interface fastEthernet 0/24 ✓
+			description Interface de Trunk com o Router 2911 do Grupo-0? ✓
+			switchport trunk encapsulation dot1q ✓
+			switchport mode trunk ✓
+		end ✓
 
-!Salvando as informações
-copy running-config startup-config
+!Salvando as informações 
+copy running-config startup-config ✓
 	
 !Comandos para visualização das informações:
 show running-config
